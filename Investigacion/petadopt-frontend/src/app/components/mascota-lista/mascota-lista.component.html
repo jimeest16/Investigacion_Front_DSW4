@@ -1,0 +1,19 @@
+<div class="contenedor-basico">
+  <h2>Listado de Mascotas</h2>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <div *ngIf="!errorMessage && mascotas.length === 0" class="empty-state">
+    No hay mascotas disponibles para mostrar
+  </div>
+
+  <div *ngIf="mascotas.length > 0">
+    <div *ngFor="let mascota of mascotas" class="mascota-item">
+      <h3>{{ mascota.nombre }}</h3>
+      <p>Especie: {{ mascota.especie }}</p>
+      <p>Refugio: {{ mascota.refugio.nombre }} ({{ mascota.refugio.ubicacion }})</p>
+      <p>Estado: {{ mascota.disponible ? 'Disponible' : 'No disponible' }}</p>
+      <button [disabled]="!mascota.disponible">Solicitar Adopcion</button>
+    </div>
+  </div>
+</div>

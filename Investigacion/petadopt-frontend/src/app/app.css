@@ -1,0 +1,51 @@
+:host {
+  background: #fffaf7;
+  color: #263238;
+  display: block;
+  min-height: 100vh;
+}
+
+.topbar {
+  align-items: center;
+  background: #fffaf7;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1120px;
+  padding: 1.25rem 1.5rem;
+}
+
+.brand {
+  color: #d85d3e;
+  font-size: 1.5rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+nav { display: flex; gap: 1.5rem; }
+nav a { color: #657177; font-size: .9rem; text-decoration: none; }
+nav a:hover { color: #d85d3e; }
+
+main { margin: auto; max-width: 1120px; padding: 0 1.5rem 4rem; }
+.hero { align-items: center; background: #ffe9dc; border-radius: 1.5rem; display: flex; justify-content: space-between; margin: 1rem 0 4rem; min-height: 290px; overflow: hidden; padding: 3rem clamp(1.5rem, 6vw, 5rem); }
+.eyebrow { color: #d85d3e; font-size: .75rem; font-weight: 800; letter-spacing: .12em; margin: 0 0 1rem; }
+h1 { color: #263238; font-size: clamp(2.5rem, 6vw, 4.7rem); letter-spacing: -.06em; line-height: .98; margin: 0; max-width: 600px; }
+.intro { color: #66737a; font-size: 1.05rem; line-height: 1.6; margin: 1.25rem 0 1.75rem; max-width: 480px; }
+.primary-button { background: #d85d3e; border-radius: 999px; color: white; display: inline-block; font-weight: 700; padding: .8rem 1.3rem; text-decoration: none; }
+.hero-illustration { font-size: 9rem; filter: drop-shadow(0 10px 0 #f7c4a9); transform: rotate(-8deg); }
+.pets-section { margin-bottom: 4rem; }
+.steps { border-top: 1px solid #f1e2d9; padding-top: 2rem; }
+.steps h2 { margin: 0 0 1.5rem; }
+.step-list { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+.step-list article { background: #fff; border-radius: 1rem; padding: 1.25rem; }
+.step-list span { align-items: center; background: #ffe9dc; border-radius: 50%; color: #d85d3e; display: flex; font-weight: 800; height: 2rem; justify-content: center; margin-bottom: .8rem; width: 2rem; }
+.step-list strong { display: block; margin-bottom: .35rem; }
+.step-list p { color: #66737a; font-size: .9rem; margin: 0; }
+footer { border-top: 1px solid #f1e2d9; color: #899399; font-size: .85rem; padding: 1.5rem; text-align: center; }
+
+@media (max-width: 650px) {
+  nav { display: none; }
+  .hero { margin-top: .5rem; padding: 2rem 1.5rem; }
+  .hero-illustration { display: none; }
+  .step-list { grid-template-columns: 1fr; }
+}
