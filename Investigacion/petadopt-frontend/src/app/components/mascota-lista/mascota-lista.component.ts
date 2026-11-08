@@ -13,6 +13,7 @@ import { Mascota } from '../../domain/mascota.domain';
 export class MascotaListComponent implements OnInit {
   mascotas: Mascota[] = [];
   errorMessage = '';
+  mascotaSolicitadaId: number | null = null;
 
   constructor(private mascotaService: MascotaService) {}
 
@@ -25,5 +26,9 @@ export class MascotaListComponent implements OnInit {
         this.errorMessage = 'No se pudo conectar con el servidor.';
       }
     });
+  }
+
+  solicitarAdopcion(idMascota: number): void {
+    this.mascotaSolicitadaId = idMascota;
   }
 }

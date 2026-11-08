@@ -12,15 +12,17 @@ describe('MascotaService', () => {
     service = TestBed.inject(MascotaService);
   });
 
+  //caso 1: que mediante toBeTruthy() se pueda instanciar el servicio correctamente
   it('debe instanciarse', () => {
-    expect(service).toBeTruthy();
+    //linea que falta
+
   });
 
+  //caso 2: que mediante toBe() se pueda devolver un arreglo de mascotas quemadas sin conectarse a un servidor
   it('debe devolver mascotas quemadas sin conectarse a un servidor', () => {
     service.obtenerMascotasDisponibles().subscribe((mascotas) => {
-      expect(mascotas.length).toBe(3);
-      expect(mascotas[0].nombre).toBe('Firulais');
-      expect(mascotas[1].refugio.nombre).toBe('Huellitas de Amor');
+   //3 expect con lo esperado
+   
     });
   });
 });

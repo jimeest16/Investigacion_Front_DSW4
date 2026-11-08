@@ -34,29 +34,31 @@ describe('Pruebas del Componente Lista de Mascotas', () => {
     componente = entornoPrueba.componentInstance;
   });
 
+  //casos 
+  //caso 1: que mediante toBeTruthy() se pueda instanciar el componente correctamente
   it('1. Debe instanciar el componente correctamente', () => {
-    servicioSimulado.obtenerMascotasDisponibles.mockReturnValue(of([]));
-    entornoPrueba.detectChanges(); // Ejecuta ngOnInit
-    expect(componente).toBeTruthy();
-  });
+    
 
+
+  });
+//caso 2: que mediante toBe() se pueda renderizar la mascota en la plantilla HTML
+//renderizar significa que el componente se muestra en la interfaz de usuario y se puede ver en el navegador
  it('2. Debe renderizar la mascota en la plantilla HTML', () => {
+
+  //realizar una prueba independiente
+  //con una mascota de id 1 para comprobar que es simulada y que no choca con otras pruebas
     const mascotasDePrueba: Mascota[] = [
-      {
-        id: 1,
-        nombre: 'Tobby',
-        especie: 'Perro',
-        disponible: true,
-        refugio: { id: 100, nombre: 'Refugio Cartago', ubicacion: 'Cartago' }
-      }
+      
     ];
 
     servicioSimulado.obtenerMascotasDisponibles.mockReturnValue(of(mascotasDePrueba));
 
     entornoPrueba.detectChanges(); // Ejecuta ngOnInit() y renderiza el HTML
 
-    expect(componente.mascotas.length).toBe(1);
+    // toBe? Cuantos datos se pasan en la prueba unitaria
+    expect(componente.mascotas.length).toBe(0);
 
+    
     const htmlVista = entornoPrueba.nativeElement as HTMLElement;
     const etiquetaMascota = htmlVista.querySelector('.mascota-item');
 

@@ -13,7 +13,12 @@
       <p>Especie: {{ mascota.especie }}</p>
       <p>Refugio: {{ mascota.refugio.nombre }} ({{ mascota.refugio.ubicacion }})</p>
       <p>Estado: {{ mascota.disponible ? 'Disponible' : 'No disponible' }}</p>
-      <button [disabled]="!mascota.disponible">Solicitar Adopcion</button>
+      <button
+        [disabled]="!mascota.disponible || mascotaSolicitadaId === mascota.id"
+        (click)="solicitarAdopcion(mascota.id)"
+      >
+        {{ mascotaSolicitadaId === mascota.id ? 'Solicitud hecha!' : 'Solicitar Adopcion' }}
+      </button>
     </div>
   </div>
 </div>
