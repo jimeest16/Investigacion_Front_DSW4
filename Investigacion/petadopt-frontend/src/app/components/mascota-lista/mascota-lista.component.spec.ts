@@ -16,9 +16,9 @@ describe('Pruebas del Componente Lista de Mascotas', () => {
 
 
   beforeEach(async () => {
-    // Asignamos una funcion simulada simple con Vitest
+    
     servicioSimulado = {obtenerMascotasDisponibles: vi.fn()
-        //la funcion de vi simula el comportamiento de un observable que retorna un array de mascotas
+        //la funcion de vi simula el  un observable que retorna un array de mascotas
     };
 
     //await significa que la configuracion del TestBed es asincrona y debemos esperar a que se complete antes de continuar con las pruebas
@@ -49,8 +49,10 @@ describe('Pruebas del Componente Lista de Mascotas', () => {
   //con una mascota de id 1 para comprobar que es simulada y que no choca con otras pruebas
     const mascotasDePrueba: Mascota[] = [
       
+
     ];
 
+    
     servicioSimulado.obtenerMascotasDisponibles.mockReturnValue(of(mascotasDePrueba));
 
     entornoPrueba.detectChanges(); // Ejecuta ngOnInit() y renderiza el HTML
@@ -58,7 +60,7 @@ describe('Pruebas del Componente Lista de Mascotas', () => {
     // toBe? Cuantos datos se pasan en la prueba unitaria
     expect(componente.mascotas.length).toBe(0);
 
-    
+
     const htmlVista = entornoPrueba.nativeElement as HTMLElement;
     const etiquetaMascota = htmlVista.querySelector('.mascota-item');
 
